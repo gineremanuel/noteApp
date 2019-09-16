@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Reminder } from '../reminder.model';
-import { FormsModule } from '@angular/forms';
-
 
 @Component({
   selector: 'app-notes',

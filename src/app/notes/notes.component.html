@@ -1,14 +1,24 @@
-<div>
-    <h1>Recordatorios</h1>
-    <div>
-        <button mat-mini-fab color="primary" (click)="add()">+</button>
-        <button mat-mini-fab color="warn" (click)="delete()">trash</button>
-        <mat-icon svgIcon="thumbs-up" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon>
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+            <span>Recordatorios</span>
+            <span class="example-spacer"></span>           
+            <button mat-mini-fab color="primary" (click)="add()"><mat-icon aria-hidden="false" aria-label="add_circle">add_circle</mat-icon></button>
+    </mat-toolbar-row>
+</mat-toolbar>
+<div class="container">
+    <div class="textarea">
+        <textarea class="box" type="text" [(ngModel)]="reminder.text"></textarea>
     </div>
-</div>
-<div><input type="text" [(ngModel)]="reminder.text"></div>
-<div *ngFor="let rem of reminders">
-    <div>
-        <p>{{rem.text}}</p>
+    <div *ngFor="let rem of reminders">
+        <div>
+            <mat-card class="card-reminder">
+                <mat-card-content>
+                    <p>{{rem.text}}</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-mini-fab color="warn" (click)="delete()">trash</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
     </div>
 </div>
