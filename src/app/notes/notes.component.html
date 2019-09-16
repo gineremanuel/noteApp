@@ -1,0 +1,14 @@
+<div>
+    <h1>Recordatorios</h1>
+    <div>
+        <button mat-mini-fab color="primary" (click)="add()">+</button>
+        <button mat-mini-fab color="warn" (click)="delete()">trash</button>
+        <mat-icon svgIcon="thumbs-up" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon>
+    </div>
+</div>
+<div><input type="text" [(ngModel)]="reminder.text"></div>
+<div *ngFor="let rem of reminders">
+    <div>
+        <p>{{rem.text}}</p>
+    </div>
+</div>
